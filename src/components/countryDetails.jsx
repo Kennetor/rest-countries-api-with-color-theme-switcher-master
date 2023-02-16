@@ -28,7 +28,7 @@ function CountryDetails({ country, allCountries }) {
         <div className="mt-16 w-80 md:w-96 m-auto md:m-10">
           <img src={country.flags.svg} alt={`${country.name.common} flag`} />
         </div>
-        <div className="ml-10 md:ml-0 mt-8">
+        <div className="ml-10 md:ml-0 mt-8 md:fixed left-[30rem]">
           <h2 className="text-5xl font-medium">{country.name.common}</h2>
           <div className="md:grid md:gap-2">
             <p className="mt-4">
@@ -85,7 +85,7 @@ function CountryDetails({ country, allCountries }) {
                   <button
                     key={index}
                     href={borderCountryURL}
-                    className="bg-[#2b3945] rounded mt-4 w-32 ml-8 mb-20"
+                    className="bg-[#2b3945] rounded mt-4 w-20 md:w-24 ml-8 mb-20"
                     onClick={() => handleBorderCountryClick(borderCountryCode)}
                   >
                     {borderCountry}
