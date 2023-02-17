@@ -5,12 +5,16 @@ import Country from "./components/country";
 import CountryDetails from "./components/countryDetails";
 import FilterRegion from "./components/regionFilter";
 import { SearchInput } from "./components/searchInput";
+import { ThemeProvider } from "./components/themeContext";
+import { useTheme, useThemeUpdate } from "./components/themeContext";
 
 function App() {
   const [countries, setCountries] = useState([]);
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedRegion, setSelectedRegion] = useState(null);
   const [searchInput, setSearchInput] = useState("");
+  const colorTheme = useTheme();
+  const toggleTheme = useThemeUpdate();
 
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
@@ -48,9 +52,15 @@ function App() {
   const filteredCountries = filterCountries();
 
   return (
-    <div>
+    <ThemeProvider>
       <Navbar />
-      <div className="absolute w-full">
+
+      <div
+        className="absolute w-full"
+        style={{
+          background: "#202c37",
+        }}
+      >
         {selectedCountry === null && (
           <>
             <SearchInput onChange={handleSearchInput} />
@@ -74,7 +84,7 @@ function App() {
           </div>
         )}
       </div>
-    </div>
+    </ThemeProvider>
   );
 }
 

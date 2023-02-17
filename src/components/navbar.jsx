@@ -1,16 +1,31 @@
 import whiteMoon from "../icons/moon.png";
 import darkMoon from "../icons/moondark.png";
+import { useTheme, useThemeUpdate } from "./themeContext";
 
 export function Navbar() {
+  const colorTheme = useTheme();
+  const toggleTheme = useThemeUpdate();
+
+  const colors = {
+    color: "white",
+    background: "black",
+  };
   return (
     <>
-      <div className="w-full flex">
-        <div className="flex bg-[#2b3945] w-full justify-between">
-          <h1 className="ml-6 lg:ml-12 my-6 text-white">Where in the world?</h1>
-          <div className="flex mx-6 lg:mx-12 my-6 gap-4">
-            {/* <img src={whiteMoon} className="w-8" /> */}
-            {/* <img src={darkMoon} className="h-6" />
-            <button>Dark Mode</button> */}
+      <div style={colors}>
+        <div className="w-full flex">
+          <div
+            className="flex  w-full justify-between"
+            style={{
+              color: colorTheme ? "#2b3945" : "white",
+              background: colorTheme ? "white" : "#2b3945",
+            }}
+          >
+            <h1 className="ml-6 lg:ml-12 my-6 ">Where in the world?</h1>
+            <div className="flex mx-6 lg:mx-12 my-6 gap-4">
+              <img src={colorTheme ? darkMoon : whiteMoon} className="h-6" />
+              <button onClick={toggleTheme}>Dark Mode</button>
+            </div>
           </div>
         </div>
       </div>

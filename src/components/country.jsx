@@ -1,9 +1,17 @@
+import { useTheme } from "./themeContext";
+
 function Country({ country, handleCountryClick }) {
+  const colorTheme = useTheme();
+
   return (
     <>
       <div
         className="w-[300px] lg:w-72 justify-around mt-20 bg-[#2b3945] rounded-lg"
         onClick={() => handleCountryClick(country)}
+        style={{
+          color: colorTheme ? "#2b3945" : "white",
+          background: colorTheme ? "white" : "#2b3945",
+        }}
       >
         <img src={country.flags.svg} className="w-80 rounded-lg" />
         <div className="mx-6 my-16">
