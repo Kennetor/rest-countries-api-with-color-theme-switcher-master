@@ -24,9 +24,11 @@ function CountryDetails({ country, allCountries }) {
   return (
     <>
       <div
+        className="border-t-2"
         style={{
           color: colorTheme ? "black" : "white",
           background: colorTheme ? "white" : "#202c37",
+          height: "100vh",
         }}
       >
         <Button text="Back" onClick={refreshPage} />{" "}
