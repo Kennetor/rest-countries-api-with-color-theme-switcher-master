@@ -27,6 +27,7 @@ function CountryDetails({ country, allCountries }) {
         style={{
           color: colorTheme ? "black" : "white",
           background: colorTheme ? "white" : "#202c37",
+          height: "100vh",
         }}
       >
         <Button text="Back" onClick={refreshPage} />{" "}

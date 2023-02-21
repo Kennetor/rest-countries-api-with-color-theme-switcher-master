@@ -13,7 +13,7 @@ export function Navbar() {
   return (
     <>
       <div>
-        <div className="w-full border-b-2">
+        <div className="w-full">
           <div
             className="flex w-full justify-between "
             style={{
