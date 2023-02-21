@@ -6,16 +6,16 @@ export function Navbar() {
   const colorTheme = useTheme();
   const toggleTheme = useThemeUpdate();
 
-  const colors = {
-    color: "white",
-    background: "black",
-  };
+  //   const colors = {
+  //     color: "white",
+  //     background: "black",
+  //   };
   return (
     <>
-      <div style={colors}>
-        <div className="w-full flex">
+      <div>
+        <div className="w-full border-b-2">
           <div
-            className="flex  w-full justify-between"
+            className="flex w-full justify-between "
             style={{
               color: colorTheme ? "#2b3945" : "white",
               background: colorTheme ? "white" : "#2b3945",

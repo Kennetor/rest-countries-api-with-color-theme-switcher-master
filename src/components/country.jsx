@@ -6,7 +6,7 @@ function Country({ country, handleCountryClick }) {
   return (
     <>
       <div
-        className="w-[300px] lg:w-72 justify-around mt-20 bg-[#2b3945] rounded-lg"
+        className="w-[300px] lg:w-72 justify-around mt-16 rounded-lg border-2 border-slate-600"
         onClick={() => handleCountryClick(country)}
         style={{
           color: colorTheme ? "#2b3945" : "white",
@@ -20,7 +20,7 @@ function Country({ country, handleCountryClick }) {
           </h1>
           <p>
             <span className="font-medium">Population:</span>{" "}
-            {country.population}
+            {country.population.toLocaleString()}
           </p>
           <p>
             <span className="font-medium">Region:</span> {country.region}

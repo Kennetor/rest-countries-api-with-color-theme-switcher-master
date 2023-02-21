@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 
 // Create a new context object
 export const ThemeContext = React.createContext();
@@ -10,14 +10,24 @@ export function useTheme() {
 
 // Create a custom hook to update the color theme
 export function useThemeUpdate() {
-  return useContext(ThemeUpdateContext);
+  const toggleTheme = useContext(ThemeUpdateContext);
+
+  function handleClick() {
+    console.log("Toggling theme");
+    toggleTheme();
+  }
+  return handleClick;
 }
 
 // Create a new context object for updating the color theme
 export const ThemeUpdateContext = React.createContext();
 
 export function ThemeProvider(props) {
-  const [colorTheme, setColorTheme] = useState(false);
+  const [colorTheme, setColorTheme] = useState(true);
+
+  useEffect(() => {
+    console.log("Theme updated:", colorTheme);
+  }, [colorTheme]);
 
   function toggleTheme() {
     setColorTheme((prevColorTheme) => !prevColorTheme);
