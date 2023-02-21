@@ -77,7 +77,7 @@ function CountryDetails({ country, allCountries }) {
               </div>
             </div>
           </div>
-          <div className="md:absolute top-[340px] left-[480px]">
+          <div className="md:absolute top-[340px] left-[40px]">
             {/* Map out if theres a borders array, else returns null */}
             {borderCountries.length > 0 ? (
               <div className="inline w-full md:flex">
